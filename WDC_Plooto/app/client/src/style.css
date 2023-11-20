@@ -1,0 +1,316 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--sidebar-width: 250px;
+	--normal-border-radius: 10px;
+
+	--bg-background: #1f1a30;
+	--bg-primary: #2a233a;
+	--bg-secondary: #332a46;
+	--bg-tertiary: #3a2f4d;
+	--bg-quaternary: #483b5e;
+	--bg-quinary: #54466e;
+
+	--text-primary: #d7cae8;
+	--text-secondary: #c9badc;
+	--text-tertiary: #baaacf;
+
+	--input-border: #504761;
+
+	--accent-primary: #ecad4f;
+	--accent-green: #abd5a0;
+	--plooto-header: #5e5276;
+
+	--shadow-opacity: 0.12;
+}
+
+/* light mode overrides */
+#app-container.light {
+	--bg-background: #e1e2ed;
+	--bg-primary: #eeeff6;
+	--bg-secondary: #f6f7fa;
+	--bg-tertiary: #ffffff;
+	--bg-quaternary: #f0dec4;
+	--bg-quinary: #f9eedd;
+
+	--text-primary: black;
+	--text-secondary: gray;
+	--text-tertiary: #a39da5;
+
+	--input-border: #dedfee;
+	--shadow-opacity: 0.08;
+}
+
+#app-container {
+	background-color: var(--bg-primary);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+.bg-primary {
+	background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+	background-color: var(--bg-secondary);
+}
+
+.rounded-normal {
+	border-radius: var(--normal-border-radius);
+}
+
+h1 {
+	margin: unset;
+}
+
+h2 {
+	margin: unset;
+}
+
+p {
+	margin: unset;
+}
+
+h4 {
+	margin: unset;
+}
+
+h3 {
+	margin: unset;
+}
+
+.page-title {
+	color: var(--text-primary);
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.truncate-2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.truncate-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.truncate-4 {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.generic-button {
+	background-color: var(--bg-secondary);
+	padding: 10px 20px;
+	font-weight: bolder;
+	font-size: medium;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.generic-button:disabled {
+	cursor: unset;
+}
+
+.generic-button:hover:not(:disabled) {
+	filter: brightness(110%);
+}
+
+.generic-button:hover.shadow-sm {
+	filter: brightness(110%) drop-shadow(0 5px 4px rgb(0 0 0 / 0.04)) drop-shadow(0 2px 1.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+.generic-button:hover.shadow-md {
+	filter: brightness(110%) drop-shadow(0 8px 7px rgb(0 0 0 / 0.04)) drop-shadow(0 3px 2.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+.generic-button:hover.shadow-xs {
+	filter: brightness(110%) drop-shadow(0 2px 1px rgb(0 0 0 / 0.04)) drop-shadow(0 1px 0.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+.generic-button,
+.fake-link,
+nav a {
+	color: var(--text-primary);
+	padding: 10px 20px;
+	border-radius: var(--normal-border-radius);
+	text-decoration: none;
+	display: block;
+}
+
+.fake-link {
+	cursor: unset;
+}
+
+nav a.selected {
+	background-color: var(--bg-tertiary);
+	color: var(--accent-primary);
+	filter: drop-shadow(0 5px 4px rgb(0 0 0 / 0.04)) drop-shadow(0 2px 1.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+#app-container.light nav a.selected {
+	background-color: var(--accent-primary);
+	color: var(--text-primary);
+	filter: drop-shadow(0 5px 4px rgb(0 0 0 / 0.04)) drop-shadow(0 2px 1.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+nav .dropdown-bg {
+	background-color: var(--bg-secondary);
+	border-radius: var(--normal-border-radius);
+	width: 100%;
+}
+
+input,
+textarea,
+select {
+	background-color: var(--bg-secondary);
+	border: 1px solid var(--input-border);
+	/* The 10px border radius looked weird here, so resulting to 5px instead */
+	border-radius: 5px;
+	padding: 5px 10px;
+	width: 250px;
+	color: var(--text-primary);
+	accent-color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: 1px solid var(--text-tertiary);
+}
+
+select::after {
+	background-color: red;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: #988daa;
+	opacity: 50%;
+}
+
+.shadow-md {
+	filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+.shadow-sm {
+	filter: drop-shadow(0 5px 4px rgb(0 0 0 / 0.04)) drop-shadow(0 2px 1.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+.shadow-xs {
+	filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 0.04)) drop-shadow(0 1px 0.5px rgb(0 0 0 / var(--shadow-opacity)));
+}
+
+nav > a,
+nav > div > a,
+.fake-link {
+	font-weight: 550;
+}
+
+.event-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 20px;
+}
+
+.dialog {
+	border-radius: var(--normal-border-radius);
+	border: none;
+	background-color: var(--bg-primary);
+	z-index: 50;
+}
+
+.dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.vc-container .vc-light {
+	--vc-bg: var(--bg-secondary);
+}
+
+.vc-plooto {
+	--vc-accent-50: var(--accent-primary);
+	--vc-accent-100: var(--accent-primary);
+	--vc-accent-200: var(--accent-primary);
+	--vc-accent-300: var(--accent-primary);
+	--vc-accent-400: var(--accent-primary);
+	--vc-accent-500: var(--accent-primary);
+	--vc-accent-600: var(--accent-primary);
+	--vc-accent-700: var(--accent-primary);
+	--vc-accent-800: var(--accent-primary);
+	--vc-accent-900: var(--accent-primary);
+	--vc-white: var(--bg-secondary);
+	--vc-gray-50: var(--bg-quaternary);
+	--vc-gray-200: var(--accent-primary);
+	--vc-gray-300: var(--input-border);
+	--vc-gray-300: var(--input-border);
+	--vc-gray-500: var(--text-primary);
+	--vc-gray-900: var(--text-primary);
+}
+
+.vc-container button {
+	background-color: var(--bg-tertiary);
+	filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 0.04)) drop-shadow(0 1px 0.5px rgb(0 0 0 / var(--shadow-opacity)));
+	color: var(--text-primary);
+}
+
+.vc-nav-container button {
+	background-color: var(--bg-quinary);
+	filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 0.04)) drop-shadow(0 1px 0.5px rgb(0 0 0 / var(--shadow-opacity)));
+	color: var(--text-primary);
+}
+
+.vc-container .vc-header button:hover {
+	background-color: var(--bg-tertiary);
+	filter: brightness(120%);
+}
+
+.vc-container .vc-nav-item button {
+	background-color: var(--bg-quinary);
+}
+
+.scrollbar-hide {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	-ms-overflow-style: none;
+}

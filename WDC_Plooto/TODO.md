@@ -1,0 +1,52 @@
+# Todo List
+- [x] Profile button event listeners need to be unregistered
+- [x] API route for club management members
+- [x] Input form validation on signup page
+	- [x] Confirm password
+	- [x] Validate that first and last name are entered
+- [x] API routes for event attendance updating
+- [x] JS files pass linting
+- [x] Make sure styles are consistent throughout client
+- [x] Implement Calendar, pull data from user's upcoming events
+	- [x] Ability to click on events from calendar popup
+- [x] Club Admin Page
+	- [x] Members searching & sorting
+	- [x] Events searching
+	- [x] Posts searching
+	- [x] Render Join Date
+- [x] Dedicated Post Page
+	- [x] Route & Data Handling
+	- [x] Styling
+- [x] Dedicated Events Page
+	- [x] Route & Data Handling
+	- [x] Styling
+- [x] Dedicated Clubs page
+	- [x] Route & Data Handling
+	- [x] Styling
+- [x] Notification Settings implementation
+- [x] Notifications Implementation
+	- [x] Send on new posts
+	- [x] Send on new events
+	- [x] Send on upcoming events (if within 24 hours)
+	- [x] Send on club invitation
+	- [x] Send on club join request being accepted
+	- [x] Send on event join request being accepted
+- [x] Use email library to send emails to users
+	- [x] Send on notifications
+- [x] Private Club Implementations
+	- [x] Admin members page needs "requests" section
+		- [x] Accept Request
+		- [x] Decline Request
+	- [x] Request to join state on client - needs to update
+- [x] Remove private/public events -- not part of MVP.
+- [x] Make is so you can leave clubs
+	- [x] Style the buttons
+- [x] Fix club creation and deletion
+- [ ] System Admin page
+	- [x] Able to delete users
+	- [x] Able to delete events
+	- [x] Able to delete clubs
+	- [x] Able to remove members from clubs
+	- [x] When making changes, remove cached data
+	- [ ] Styling
+- [ ] Fix duplicate posts on update
