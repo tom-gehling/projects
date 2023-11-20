@@ -1,1 +1,1 @@
-# Some complete university and provate projects 
+# Catalogue of completed university and private projects
